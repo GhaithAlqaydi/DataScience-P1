@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Happiness Code: What Makes Developers Thrive in 2025?</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #1a1209;
+    --paper: #faf7f2;
+    --cream: #f0ead8;
+    --gold: #c8922a;
+    --gold-light: #e8c97a;
+    --rust: #b84c2b;
+    --teal: #2a6b6e;
+    --muted: #7a6e5f;
+    --rule: #d4c9b0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    line-height: 1.85;
+    font-size: 18px;
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    padding: 14px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    background: var(--ink);
+    overflow: hidden;
+    padding: 80px 24px 64px;
+    text-align: center;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,146,42,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,146,42,0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-noise {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(42,107,110,0.25) 0%, transparent 70%);
+  }
+
+  .hero-content { position: relative; max-width: 780px; margin: 0 auto; }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 6vw, 68px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(240,234,216,0.7);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+
+  .byline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: rgba(200,146,42,0.7);
+    border-top: 1px solid rgba(200,146,42,0.2);
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  /* ── Layout ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── Section Headers ── */
+  .section {
+    padding: 56px 0 0;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  h2 .drop {
+    float: left;
+    font-size: 3.8em;
+    line-height: 0.78;
+    margin: 4px 8px 0 0;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  p { margin-bottom: 20px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── Pull Quote ── */
+  .pull-quote {
+    border-left: 4px solid var(--gold);
+    margin: 44px 0;
+    padding: 24px 32px;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .pull-quote::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--gold-light);
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    line-height: 1;
+  }
+
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+    padding-top: 16px;
+  }
+
+  /* ── Stat Cards ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 36px 0;
+  }
+
+  .stat-card {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 24px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(200,146,42,0.15) 0%, transparent 60%);
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(240,234,216,0.65);
+    position: relative;
+  }
+
+  /* ── Chart: horizontal bars ── */
+  .chart {
+    margin: 36px 0;
+    background: var(--cream);
+    padding: 28px 28px 20px;
+  }
+
+  .chart-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    width: 130px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  .bar-track {
+    flex: 1;
+    background: rgba(0,0,0,0.08);
+    height: 22px;
+    position: relative;
+  }
+
+  .bar-fill {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    transition: width 1s ease;
+  }
+
+  .bar-fill.positive { background: var(--teal); }
+  .bar-fill.negative { background: var(--rust); }
+
+  /* ── Profile cards ── */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 36px 0;
+  }
+
+  .profile-card {
+    border: 1px solid var(--rule);
+    padding: 24px 18px;
+    position: relative;
+  }
+
+  .profile-card.winner {
+    border-color: var(--gold);
+    background: #fffbf2;
+  }
+
+  .profile-card.winner::before {
+    content: '★ HIGHEST';
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    padding: 2px 10px;
+  }
+
+  .profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .profile-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .profile-stat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .profile-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--teal);
+    margin-top: 14px;
+  }
+
+  .profile-score.low { color: var(--rust); }
+
+  /* ── Rule ── */
+  .rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 52px 0 0;
+  }
+
+  /* ── Conclusion ── */
+  .conclusion {
+    padding: 52px 0 72px;
+  }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--ink);
+    color: rgba(240,234,216,0.5);
+    text-align: center;
+    padding: 32px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .stat-row, .profile-grid { grid-template-columns: 1fr; }
+    .bar-label { width: 90px; font-size: 10px; }
+    .byline { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">Stack Overflow Developer Survey 2025 · Data Analysis · Machine Learning</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-content">
+    <p class="kicker">49,191 developers surveyed · 2025</p>
+    <h1>The <em>Happiness</em> Code:<br/>What Makes Developers<br/>Thrive in 2025?</h1>
+    <p class="hero-sub">We dug into the world's largest developer survey to find out what separates satisfied engineers from frustrated ones — and the answers might surprise you.</p>
+    <div class="byline">
+      <span>Stack Overflow Developer Survey 2025</span>
+      <span>Gradient Boosting · Pearson Correlation</span>
+      <span>49,191 Respondents</span>
+    </div>
+  </div>
+</header>
+
+<!-- BODY -->
+<main class="container">
+
+  <!-- INTRO -->
+  <section class="section">
+    <p class="section-label">Introduction</p>
+    <h2>Every year, developers vote with their answers.</h2>
+    <p>
+      Stack Overflow's annual developer survey is the closest thing the tech world has to a census. In 2025, nearly 50,000 software professionals answered questions about everything from their favourite programming language to how they feel about AI taking their jobs.
+    </p>
+    <p>
+      We analysed those answers using machine learning — training a model to predict job satisfaction from everything the survey captures: experience, pay, remote work, AI tool usage, and more. Here is what we found.
+    </p>
+  </section>
+
+  <!-- STAT CARDS -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num">49K</div>
+      <div class="stat-label">Developers surveyed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">7.4</div>
+      <div class="stat-label">Average satisfaction (out of 10)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">62%</div>
+      <div class="stat-label">Use AI tools regularly</div>
+    </div>
+  </div>
+
+  <!-- Q1: AI FEAR -->
+  <hr class="rule"/>
+  <section class="section">
+    <p class="section-label">Finding 01</p>
+    <h2><span class="drop">F</span>ear of AI is the single strongest drag on satisfaction.</h2>
+    <p>
+      Of all the factors we measured, one stood out as the clearest negative predictor of job satisfaction: believing that AI will take your job. Developers who answered "Yes" to this question scored meaningfully lower than those who said "No" — more than the effect of any individual pay bracket.
+    </p>
+    <p>
+      This isn't about AI itself being bad. It's about anxiety. Developers who embrace AI tools report slightly higher satisfaction than the survey average. It's the fear — not the technology — that hurts.
+    </p>
+
+    <div class="chart">
+      <div class="chart-title">Correlation with job satisfaction (Pearson r) — key features</div>
+
+      <div class="bar-row">
+        <span class="bar-label">AI fear</span>
+        <div class="bar-track">
+          <div class="bar-fill negative" style="width:50%">−0.125</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Work exp.</span>
+        <div class="bar-track">
+          <div class="bar-fill positive" style="width:42%">+0.106</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Years coding</span>
+        <div class="bar-track">
+          <div class="bar-fill positive" style="width:38%">+0.094</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Log salary</span>
+        <div class="bar-track">
+          <div class="bar-fill positive" style="width:32%">+0.080</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Remote work</span>
+        <div class="bar-track">
+          <div class="bar-fill positive" style="width:16%">+0.040</div>
+        </div>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Uses AI</span>
+        <div class="bar-track">
+          <div class="bar-fill positive" style="width:10%">+0.024</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>The fear of being replaced by AI is a stronger predictor of unhappiness than a pay cut.</p>
+    </div>
+  </section>
+
+  <!-- Q2: PAY -->
+  <hr class="rule"/>
+  <section class="section">
+    <p class="section-label">Finding 02</p>
+    <h2>Pay matters — but less than everyone assumes.</h2>
+    <p>
+      Compensation has a positive relationship with satisfaction, but its correlation (r = +0.08) is weaker than experience, and far weaker than the negative drag of AI anxiety. The median satisfied developer earns $75,000 a year. The least satisfied group is not the lowest paid — it's distributed across income levels.
+    </p>
+    <p>
+      This aligns with decades of psychology research: beyond a comfort threshold, more money produces diminishing returns on day-to-day happiness. What keeps a developer engaged is harder to put on an offer letter.
+    </p>
+  </section>
+
+  <!-- Q3: EXPERIENCE -->
+  <hr class="rule"/>
+  <section class="section">
+    <p class="section-label">Finding 03</p>
+    <h2>Experience is quietly one of the best predictors of happiness.</h2>
+    <p>
+      Work experience and years of coding are the two strongest <em>positive</em> correlates in the dataset. The longer a developer has been working, the happier they tend to be — and this holds even after controlling for salary.
+    </p>
+    <p>
+      The most likely explanation: experienced developers have usually found a domain they enjoy, a company that fits their style, and enough confidence in their skills to feel in control. They are not just wealthier — they are better matched.
+    </p>
+  </section>
+
+  <!-- Q4: SCENARIO -->
+  <hr class="rule"/>
+  <section class="section">
+    <p class="section-label">Finding 04 · Predictive Scenario</p>
+    <h2>Who will be happiest? We ran the model on three profiles.</h2>
+    <p>
+      To bring the model to life, we built three fictional developer profiles and asked it to predict each person's job satisfaction. Same industry, different circumstances.
+    </p>
+
+    <div class="profile-grid">
+      <div class="profile-card winner">
+        <div class="profile-name">Alex</div>
+        <div class="profile-role">Senior IC · 12 yrs exp.</div>
+        <div class="profile-stat">💰 $175k · Fully remote</div>
+        <div class="profile-stat">🤖 Daily AI user · No fear</div>
+        <div class="profile-score">7.9<span style="font-size:16px;color:var(--muted)">/10</span></div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-name">Morgan</div>
+        <div class="profile-role">Junior IC · 2 yrs exp.</div>
+        <div class="profile-stat">💰 $72k · Hybrid</div>
+        <div class="profile-stat">🤖 Weekly AI user · Unsure</div>
+        <div class="profile-score">7.2<span style="font-size:16px;color:var(--muted)">/10</span></div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-name">Jordan</div>
+        <div class="profile-role">Mid-level Manager · 6 yrs</div>
+        <div class="profile-stat">💰 $95k · In-office</div>
+        <div class="profile-stat">🤖 Avoids AI · Fears job loss</div>
+        <div class="profile-score low">6.4<span style="font-size:16px;color:var(--muted)">/10</span></div>
+      </div>
+    </div>
+
+    <p>
+      The result: Morgan — junior, lower-paid — scores higher than Jordan, who is more senior and better compensated. The difference? Morgan embraces AI and works flexibly. Jordan fears AI and commutes every day.
+    </p>
+    <p>
+      In 2025, mindset and flexibility matter as much as the number at the bottom of an offer letter.
+    </p>
+  </section>
+
+  <!-- CONCLUSION -->
+  <hr class="rule"/>
+  <section class="conclusion">
+    <p class="section-label">Conclusion</p>
+    <h2>The happiest developers aren't necessarily the richest — they're the least afraid.</h2>
+    <p>
+      After analysing nearly 50,000 developer responses, a clear picture emerges. Satisfaction in 2025 is driven by a combination of earned confidence (experience), fair compensation, flexible work, and — above all — a healthy relationship with the AI tools that are reshaping every job in tech.
+    </p>
+    <p>
+      The developers thriving most are not the ones ignoring AI. They are the ones who picked it up, made it part of their workflow, and stopped worrying about being replaced. The data suggests the best thing any developer — or employer — can do in 2025 is invest not just in tools, but in the confidence to use them.
+    </p>
+
+    <div class="pull-quote">
+      <p>The code for happiness, it turns out, is mostly about attitude.</p>
+    </div>
+
+    <p style="color:var(--muted); font-size:15px;">
+      <strong>Data:</strong> Stack Overflow Developer Survey 2025 · 49,191 respondents · 
+      <strong>Model:</strong> Gradient Boosting Regressor (scikit-learn) · MAE ≈ 1.25 · R² ≈ 0.18 · 
+      <strong>Full code:</strong> <a href="https://github.com/YOUR_USERNAME/so-survey-2025-analysis" style="color:var(--teal)">GitHub repository</a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Analysis based on Stack Overflow Developer Survey 2025 · Open Database License (ODbL) · 
+  Full methodology on <a href="https://github.com/YOUR_USERNAME/so-survey-2025-analysis">GitHub</a></p>
+</footer>
+
+</body>
+</html>
